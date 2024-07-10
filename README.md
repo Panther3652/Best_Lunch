@@ -2,12 +2,24 @@
 
 Team project for study
 
-# Packages
+# Project Structure
 
-## Admin
+## Main 
 
-관리자 메뉴
+Project main class
 
-## User
+## ManageCategory 
 
-유저 메뉴
+Category manage class
+
+## ManageMenu
+
+Menu manage class
+
+## RandMenu 
+
+Menu random recommendation class
+
+## ViewMenu 
+
+Menu view class
