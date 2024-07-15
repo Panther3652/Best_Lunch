@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Process {
 
-	public static void main(String[] args) {
+	
 		// 메뉴 개수 받기
 		ViewMenu menu = new ViewMenu();
 		int menu_len = menu.getMenu();
@@ -28,16 +28,16 @@ public class Process {
 			else if (input == (menu_len - 1)) {
 				System.out.println("2개의 메뉴를 입력해주세요.");
 				multimenu();
-				RandMenu_mul_menu = new RandMenu();
+				RandMenu mul_menu = new RandMenu();
 				System.out.println("<오늘 메뉴는 " + mul_menu.multi_Menu(menu1, menu2) + "(이)다!>");
 			}
 			// 한 가지 메뉴를 선택한 경우
 			else {
 				RandMenu one_menu = new RandMenu();
-				System.out.println("<오늘 메뉴는 " + one_menu.one_Menu(input) + "(이)다!>");
+				System.out.println("<오늘 메뉴는 " + one_menu.one_Menu(input) + "(이)다!!!!!>");
 			}
 		}
 
 	}
 
-}
+

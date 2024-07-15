@@ -5,5 +5,6 @@ public class Main {
 		
 		ViewMenu menu = new ViewMenu();
 		menu.Menu();
+
 	}
 }
