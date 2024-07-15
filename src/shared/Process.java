@@ -6,7 +6,7 @@ public class Process {
 
 	public static void main(String[] args) {
 		// 메뉴 개수 받기
-		Menu menu = new Menu();
+		ViewMenu menu = new ViewMenu();
 		int menu_len = menu.getMenu();
 		
 		int menu1, menu2;
