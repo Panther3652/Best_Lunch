@@ -7,8 +7,6 @@ public class Menu {
 	private String category;
 	private static ArrayList<Menu> menus = new ArrayList<Menu>();
 	
-	public Menu() { }
-	
 	public Menu(String name, String category) {
 		this.name = name;
 		this.category = category;

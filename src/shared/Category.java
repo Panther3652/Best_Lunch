@@ -6,8 +6,6 @@ public class Category {
 	private String name;
 	private static ArrayList<Category> categories = new ArrayList<Category>();
 	
-	public Category() { }
-	
 	public Category(String name) {
 		this.name = name;
 	}
