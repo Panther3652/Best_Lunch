@@ -5,13 +5,10 @@ import java.util.ArrayList;
 public class Category {
 	private String name;
 	
-	private Category(String name) {
-		this.name = name;
-	}
+	public Category() { }
 	
-	public void addCategory(String name) {
-		Category newCategory = new Category(name);
-		categories.add(newCategory);
+	public Category(String name) {
+		this.name = name;
 	}
 	
 	public String getName() {
@@ -20,7 +17,18 @@ public class Category {
 	
 	private ArrayList<Category> categories = new ArrayList<Category>();
 	
+	public void addCategories(Category category) {
+		categories.add(category);
+	}
+	
 	public String getCategoryNameByIndex(int index) {
 		return categories.get(index).getName();
+	}
+	
+	public boolean isCategoryContains(String name) {
+		for (int i = 0; i < categories.size(); i++) {
+			if (getCategoryNameByIndex(i) == name) return true;
+		}
+		return false;
 	}
 }

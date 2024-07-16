@@ -6,14 +6,11 @@ public class Menu {
 	private String name;
 	private String category;
 	
-	private Menu(String name, String category) {
+	public Menu() { }
+	
+	public Menu(String name, String category) {
 		this.name = name;
 		this.category = category;
-	}
-	
-	public void addMenu(String name, String category) {
-		Menu newMenu = new Menu(name, category);
-		menus.add(newMenu);
 	}
 	
 	public String getName() {
@@ -26,7 +23,18 @@ public class Menu {
 	
 	private ArrayList<Menu> menus = new ArrayList<Menu>();
 	
+	public void addMenus(Menu menu) {
+		menus.add(menu);
+	}
+	
 	public String getMenuNameByIndex(int index) {
 		return menus.get(index).getName();
+	}
+	
+	public boolean isMenuContains(String name) {
+		for (int i = 0; i < menus.size(); i++) {
+			if (getMenuNameByIndex(i) == name) return true;
+		}
+		return false;
 	}
 }
