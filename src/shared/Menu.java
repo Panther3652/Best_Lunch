@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Menu {
 	private String name;
 	private String category;
+	private static ArrayList<Menu> menus = new ArrayList<Menu>();
 	
 	public Menu() { }
 	
@@ -21,19 +22,17 @@ public class Menu {
 		return category;
 	}
 	
-	private ArrayList<Menu> menus = new ArrayList<Menu>();
-	
-	public void addMenus(Menu menu) {
+	public static void addMenus(Menu menu) {
 		menus.add(menu);
 	}
 	
-	public String getMenuNameByIndex(int index) {
+	public static String getMenuNameByIndex(int index) {
 		return menus.get(index).getName();
 	}
 	
-	public boolean isMenuContains(String name) {
-		for (int i = 0; i < menus.size(); i++) {
-			if (getMenuNameByIndex(i) == name) return true;
+	public static boolean isMenuContains(String name) {
+		for (Menu menu : menus) {
+			if (menu.getName().equals(name)) return true;
 		}
 		return false;
 	}

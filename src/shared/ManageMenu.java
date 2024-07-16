@@ -4,7 +4,7 @@ public class ManageMenu {
 	public void addMenu(String name, String category) {
 		if (checkCategory(category) && !checkMenuDuplication(name)) {
 			Menu newMenu = new Menu(name, category);
-			newMenu.addMenus(newMenu);
+			Menu.addMenus(newMenu);
 			System.out.println("다음 메뉴를 추가하였습니다: " + name);
 		} else {
 			if (!checkCategory(category)) System.out.println("해당 카테고리는 존재하지 않습니다.");
@@ -16,15 +16,11 @@ public class ManageMenu {
 	
 	// 메뉴 중복 여부 확인
 	private boolean checkMenuDuplication(String menu) {
-		Menu findMenu = new Menu();
-		if (findMenu.isMenuContains(menu)) return true;
-		else return false;
+		return Menu.isMenuContains(menu);
 	}
 	
 	// 카테고리 존재 여부 확인
 	private boolean checkCategory(String category) {
-		Category findCategory = new Category();
-		if (findCategory.isCategoryContains(category)) return true;
-		else return false;
+		return Category.isCategoryContains(category);
 	}
 }
