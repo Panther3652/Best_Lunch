@@ -1,6 +1,7 @@
 package shared;
 
 public class ManageCategory {
+	// 카테고리 추가
 	public void addCategory(String name) {
 		if (!checkCategoryDuplication(name)) {
 			Category category = new Category(name);
@@ -11,6 +12,7 @@ public class ManageCategory {
 		}
 	}
 	
+	// 카테고리 이름 변경
 	public void editCategoryName(String oldName, String newName) {
 		if (checkCategoryDuplication(newName)) {
 			System.out.println("새 카테고리 이름이 이미 존재합니다.");
@@ -20,20 +22,25 @@ public class ManageCategory {
 		Category category = Category.getCategoryByName(oldName);
 		if (category != null) {
 			category.setName(newName);
-			updateMenuCategories(oldName, newName);
 			System.out.println("카테고리 이름이 수정되었습니다: " + oldName + " -> " + newName);
 		} else {
 			System.out.println("수정하려는 카테고리가 존재하지 않습니다.");
 		}
 	}
 	
-	// 카테고리 이름 변경 시 해당 카테고리 이름을 가지고 있는 모든 메뉴의 카테고리 이름을 신규 카테고리 이름으로 변경
-	private void updateMenuCategories(String oldCategoryName, String newCategoryName) {
-		Category newCategory = Category.getCategoryByName(newCategoryName);
-		for (Menu menu : Menu.getMenus()) {
-			if (menu.getCategory().getName().equals(oldCategoryName)) {
-				menu.setCategory(newCategory);
+	// 카테고리 삭제
+	// 카테고리 삭제 시 해당 카테고리에 있던 메뉴는 0번 인덱스 (카테고리 없음)으로 자동 변경
+	public void removeCategory(String name) {
+		Category category = Category.getCategoryByName(name);
+		if (category != null) {
+			Category defaultCategory = Category.getCategories().get(0);
+			for (Menu menu : category.getMenus()) {
+				menu.setCategory(defaultCategory);
 			}
+			Category.getCategories().remove(category);
+			System.out.println("카테고리가 삭제되었습니다: " + name);
+		} else {
+			System.out.println("삭제하려는 카테고리가 존재하지 않습니다.");
 		}
 	}
 	

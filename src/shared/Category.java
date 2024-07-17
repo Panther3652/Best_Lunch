@@ -1,9 +1,11 @@
 package shared;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Category {
 	private String name;
+	private List<Menu> menus = new ArrayList<>();
 	private static ArrayList<Category> categories = new ArrayList<Category>();
 	
 	public Category(String name) {
@@ -16,6 +18,14 @@ public class Category {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public List<Menu> getMenus() {
+		return menus;
+	}
+	
+	public void addMenu(Menu menu) {
+		menus.add(menu);
 	}
 	
 	public static void addCategories(Category category) {
