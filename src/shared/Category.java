@@ -93,7 +93,7 @@ public class Category {
                     String categoryName = parts[1].trim();
                     Category category = getCategoryByName(categoryName);
                     if (category != null && !Menu.isContainsMenu(menuName)) {
-                    	Menu menu = new Menu(menuName, category);
+                    	new Menu(menuName, category);
                     }
 				}
 			}
