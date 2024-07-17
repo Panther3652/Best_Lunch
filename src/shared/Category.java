@@ -15,6 +15,7 @@ public class Category {
 	
 	public Category(String name) {
 		this.name = name;
+		addCategory(this);
 	}
 	
 	// 카테고리 이름 Get
@@ -38,7 +39,7 @@ public class Category {
 	}
 	
 	// 카테고리 추가
-	public static void addCategory(Category category) {
+	private void addCategory(Category category) {
 		categories.add(category);
 	}
 	
@@ -85,8 +86,7 @@ public class Category {
 			while ((line = reader.readLine()) != null) {
 				if (line.startsWith("Category:")) {
 					String categoryName = line.substring(9);
-					Category category = new Category(categoryName);
-					addCategory(category);
+					new Category(categoryName);
 				} else if (line.startsWith("Menu:")) {
 					String[] parts = line.substring(5).split(",");
                     String menuName = parts[0].trim();

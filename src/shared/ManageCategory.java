@@ -4,8 +4,7 @@ public class ManageCategory {
 	// 카테고리 추가
 	public void addCategory(String name) {
 		if (!checkCategoryDuplication(name)) {
-			Category category = new Category(name);
-			Category.addCategory(category);
+			new Category(name);
 			System.out.println("다음 카테고리를 추가하였습니다: " + name);
 		} else {
 			System.out.println("이미 존재하는 카테고리입니다.");
@@ -19,6 +18,7 @@ public class ManageCategory {
 			return;
 		}
 		
+		// getCategoryByName을 이용해 변경할 카테고리 가져오기
 		Category category = Category.getCategoryByName(oldName);
 		if (category != null) {
 			category.setName(newName);
