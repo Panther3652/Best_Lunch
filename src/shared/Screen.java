@@ -12,9 +12,9 @@ public class Screen {
 	// 메인 메뉴
 	public void screenMain() throws IOException {
 		while (true) {
-			System.out.println("-------------------------------------");
-			System.out.println("1. 메뉴 보기 / 2. 메뉴 관리 / 0. 종료");
-			System.out.println("-------------------------------------");
+			System.out.println("----------------------------------");
+			System.out.println("| 1. 메뉴 보기 / 2. 메뉴 관리 / 0. 종료 |");
+			System.out.println("----------------------------------");
 			
 			int select = Integer.parseInt(reader.readLine());
 			
@@ -44,9 +44,9 @@ public class Screen {
 	 */
 	public void screenView() throws IOException {
 		while (true) {
-			System.out.println("-------------메뉴 보기 / 추천-------------");
+			System.out.println("-------------메뉴 보기 / 추천------------");
 			System.out.println("| 1. 메뉴 보기 / 2. 메뉴 추천 / 0. 뒤로가기 |");
-			System.out.println("----------------------------------------");
+			System.out.println("-------------------------------------");
 			
 			 int select = Integer.parseInt(reader.readLine());
 	         
@@ -85,9 +85,9 @@ public class Screen {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
 		while (true) {
-			System.out.println("-------------메뉴 / 카테고리 관리-------------");
-			System.out.println("| 1. 메뉴 추가 / 2. 메뉴 수정 / 3. 메뉴 삭제 / 4. 카테고리 추가 / 5. 카테고리 수정 / 6. 카테고리 삭제 / 0. 뒤로가기 |");
-			System.out.println("----------------------------------------");
+			System.out.println("-------------------------------------------------------------메뉴 / 카테고리 관리-------------------------------------------------------------");
+			System.out.println("| 1. 메뉴 추가 / 2. 메뉴 수정 / 3. 메뉴 삭제 / 4. 카테고리 추가 / 5. 카테고리 수정 / 6. 카테고리 삭제 / 7. 메뉴, 카테고리 저장 / 8. 메뉴, 카테고리 불러오기 / 0. 뒤로가기 |");
+			System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------");
 			
 			int select = Integer.parseInt(reader.readLine());
 	        
@@ -136,9 +136,9 @@ public class Screen {
 	// 메뉴 수정
 	// 1. 메뉴 이름 수정 / 2. 메뉴 카테고리 수정
 	public void screenManageEditMenu() throws IOException {
-		System.out.println("-------------메뉴 수정-------------");
+		System.out.println("---------------메뉴 수정--------------");
 		System.out.println("| 1. 메뉴 이름 수정 / 2. 메뉴 카테고리 수정 |");
-		System.out.println("----------------------------------------");
+		System.out.println("-----------------------------------");
 		
 		int select = Integer.parseInt(reader.readLine());
 		
