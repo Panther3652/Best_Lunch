@@ -172,18 +172,36 @@ public class Screen {
 	}
 	
 	public void screenManageEditCategory() throws IOException {
-		
+		ManageCategory manageCategory = new ManageCategory();
+		System.out.println("수정할 카테고리의 기존 이름과 새 이름을 입력하세요 (공백으로 구분하세요): ");
+		token = new StringTokenizer(reader.readLine(), " ");
+		manageCategory.editCategoryName(token.nextToken(), token.nextToken());
+		System.out.println("카테고리의 이름이 수정되었습니다.");
+		screenManage();
 	}
 	
 	public void screenManageRemoveCategory() throws IOException {
-		
+		ManageCategory manageCategory = new ManageCategory();
+		System.out.println("삭제할 카테고리의 이름을 입력하세요: ");
+		token = new StringTokenizer(reader.readLine());
+		manageCategory.removeCategory(token.nextToken());
+		System.out.println("카테고리가 삭제되었습니다.");
+		screenManage();
 	}
 	
 	public void screenManageSave() throws IOException {
-		
+		System.out.println("저장할 파일 명을 입력하세요: ");
+		token = new StringTokenizer(reader.readLine());
+		Category.saveToFile(token.nextToken() + ".txt");
+		System.out.println("메뉴 / 카테고리를 성공적으로 저장했습니다.");
+		screenManage();
 	}
 	
 	public void screenManageLoad() throws IOException {
-		
+		System.out.println("불러올 파일 명을 입력하세요: ");
+		token = new StringTokenizer(reader.readLine());
+		Category.loadFromFile(token.nextToken() + ".txt");
+		System.out.println("메뉴 / 카테고리를 성공적으로 불러왔습니다.");
+		screenManage();
 	}
 }
