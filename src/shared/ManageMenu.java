@@ -5,7 +5,7 @@ public class ManageMenu {
 	public void addMenu(String name, String categoryName) {
 		Category category = Category.getCategoryByName(categoryName);
 		if (category != null && !checkMenuDuplication(name)) {
-			Menu menu = new Menu(name, category);
+			new Menu(name, category);
 			System.out.println("다음 메뉴를 추가하였습니다: " + name);
 		} else {
 			if (category == null) System.out.println("해당 카테고리는 존재하지 않습니다.");
