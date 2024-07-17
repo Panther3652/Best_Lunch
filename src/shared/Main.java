@@ -1,7 +1,7 @@
 package shared;
 
 import java.io.IOException;
-import java.util.*;
+
 /* ToDo List
  * Manage Class 구현
  *  - 메뉴, 카테고리 추가 / 수정 / 삭제
@@ -14,8 +14,8 @@ import java.util.*;
  */
 
 public class Main {
-	public static void main(String[] args) {
-		ViewMenu menu = new ViewMenu();
-		menu.Menu();
+	public static void main(String[] args) throws Exception {
+		Screen screen = new Screen();
+		screen.menuMain();
 	}
 }
